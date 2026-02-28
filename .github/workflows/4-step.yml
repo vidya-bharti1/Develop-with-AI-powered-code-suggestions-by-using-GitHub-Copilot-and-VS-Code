@@ -37,6 +37,12 @@ jobs:
           path: exercise-toolkit
           ref: v0.8.1
 
+      - name: Debug ISSUE_NUMBER
+        run: |
+          echo "ISSUE_NUMBER is: $ISSUE_NUMBER"
+        env:
+          ISSUE_NUMBER: ${{ env.ISSUE_NUMBER }}
+
       - name: Find last comment
         id: find-last-comment
         uses: peter-evans/find-comment@v3
